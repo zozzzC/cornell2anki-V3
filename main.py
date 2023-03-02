@@ -70,7 +70,8 @@ for details in soup.find_all("details"):
                 link = re.search('"(.*)" ', pre_change_BI)
             #the below variable stores the path of the original image file
                 OG_img = link.group(1)
-                OG_file_name = OG_img.split("/")[1]                OG_file_name = urllib.parse.unquote(OG_file_name, encoding='utf-8', errors='replace')
+                OG_file_name = OG_img.split("/")[1]                
+                OG_file_name = urllib.parse.unquote(OG_file_name, encoding='utf-8', errors='replace')
                 renamed_file = OG_img.split("/")[1]
                 renamed_file = str(title + '_' + str(img_val) + renamed_file)
                 renamed_file = urllib.parse.unquote(renamed_file, encoding='utf-8', errors='replace')
