@@ -5,6 +5,7 @@ from pathlib import Path
 import re
 import urllib
 
+
 html_file = input("Enter file name (must be inside Notion HTML files folder within current directory.)")
 #location of images folder
 images_path = Path.cwd() / 'HTML Files' / html_file
@@ -69,9 +70,11 @@ for details in soup.find_all("details"):
                 link = re.search('"(.*)" ', pre_change_BI)
             #the below variable stores the path of the original image file
                 OG_img = link.group(1)
-                OG_file_name = OG_img.split("/")[1] 
+                OG_file_name = OG_img.split("/")[1]                
+                OG_file_name = urllib.parse.unquote(OG_file_name, encoding='utf-8', errors='replace')
                 renamed_file = OG_img.split("/")[1]
                 renamed_file = str(title + '_' + str(img_val) + renamed_file)
+                renamed_file = urllib.parse.unquote(renamed_file, encoding='utf-8', errors='replace')
                 renamed_OG_path = OG_img.split("/")[0]
                 #this is in html encoding. return to unescaped form 
                 renamed_OG_path = urllib.parse.unquote(renamed_OG_path, encoding='utf-8', errors='replace')
