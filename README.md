@@ -1,5 +1,5 @@
 # cornell2anki
-Turn your Notion notes into Anki-formatted txt files! Now supports:
+Basic Python script that turns your Cornell-formatted Notion notes into Anki-formatted txt files! Now supports:
 - Images in your notes! 
 - Bold and italics!
 - LaTeX equations!
@@ -10,5 +10,3 @@ Turn your Notion notes into Anki-formatted txt files! Now supports:
 - [ ] Cloze style formatting
 - [ ] ! GUI for easier file management
 - [ ] Read Me Usage
---- 
-# Usage
